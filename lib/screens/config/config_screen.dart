@@ -3,6 +3,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:pomodoro/models/task_model.dart';
 import 'package:pomodoro/services/config_service.dart';
 import 'package:pomodoro/services/navigation_service.dart';
+import 'package:pomodoro/widgets/notice.dart';
 import 'package:pomodoro/widgets/task_preset.dart';
 
 class ConfigScreen extends StatefulWidget {
@@ -17,10 +18,10 @@ class _ConfigState extends State<ConfigScreen> {
 
   void deleteTask(int index) {
     if (taskModels.length == 1) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text(
-        'The last task cannot be deleted',
-      )));
+      Notice.showSnackBar(
+        context: context,
+        message: 'The last task cannot be deleted',
+      );
       return;
     }
 
@@ -30,10 +31,10 @@ class _ConfigState extends State<ConfigScreen> {
       ConfigService().save();
       taskModels = ConfigService().getTaskModels();
 
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text(
-        '${targetTask.taskName} Task Deleted',
-      )));
+      Notice.showSnackBar(
+        context: context,
+        message: '${targetTask.taskName} Task Deleted',
+      );
     });
   }
 
@@ -57,10 +58,11 @@ class _ConfigState extends State<ConfigScreen> {
         ConfigService().save();
       });
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text(
-        'Task not found',
-      )));
+      Notice.showSnackBar(
+        context: context,
+        message: 'Task not found',
+        level: NoticeLevel.error,
+      );
     }
   }
 

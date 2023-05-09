@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pomodoro/models/task_model.dart';
-import 'package:pomodoro/screens/config/config_screen.dart';
 import 'package:pomodoro/services/config_service.dart';
 import 'package:pomodoro/widgets/loading.dart';
+import 'package:pomodoro/widgets/notice.dart';
 
 class ConfigRegistrationScreen extends StatefulWidget {
   const ConfigRegistrationScreen({Key? key}) : super(key: key);
@@ -78,10 +78,11 @@ class _ConfigRegistrationScreenState extends State<ConfigRegistrationScreen> {
         '/config',
       );
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text(
-        'Error occurred while saving config file.',
-      )));
+      Notice.showSnackBar(
+        context: context,
+        message: 'Error occurred while saving config file.',
+        level: NoticeLevel.error,
+      );
     }
   }
 
