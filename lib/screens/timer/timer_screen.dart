@@ -74,7 +74,7 @@ class _TimerScreenState extends State<TimerScreen> {
               TaskProgress(
                 timerText: TimerService().getRemainTimeFormat(),
                 loopText: TimerService().getLoopFormat(),
-                value: 0.1,
+                value: TimerService().getCurrentRatio(),
                 backgroundColor: Theme.of(context).colorScheme.secondary,
                 foregroundColor: Theme.of(context).colorScheme.primary,
               ),

@@ -172,7 +172,7 @@ class TimerService {
     var total = _convertMinuteToSec(_task!.workingTime);
     var curTime = _workingTimeSec;
 
-    return (curTime / total);
+    return 1 - (curTime / total);
   }
 
   void _finish() {
