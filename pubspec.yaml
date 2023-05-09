@@ -1,0 +1,55 @@
+name: pomodoro
+description: Flutter toy project
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  path_provider: ^2.0.14
+  json_annotation: ^4.8.0
+  json_serializable: ^6.6.1
+  flutter_slidable: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto/Roboto-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Roboto/Roboto-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Roboto/Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Roboto/Roboto-Black.ttf
+          weight: 900
+    - family: NotoSansKorean
+      fonts:
+        - asset: assets/fonts/NotoSans/NotoSansKR-Thin.otf
+          weight: 100
+        - asset: assets/fonts/NotoSans/NotoSansKR-Light.otf
+          weight: 300
+        - asset: assets/fonts/NotoSans/NotoSansKR-Regular.otf
+          weight: 400
+        - asset: assets/fonts/NotoSans/NotoSansKR-Medium.otf
+          weight: 500
+        - asset: assets/fonts/NotoSans/NotoSansKR-Bold.otf
+          weight: 700
+        - asset: assets/fonts/NotoSans/NotoSansKR-Black.otf
+          weight: 900
