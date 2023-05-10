@@ -20,6 +20,7 @@ class _TimerScreenState extends State<TimerScreen> {
   void initState() {
     task = ConfigService().findSelectedTask();
     TimerService().setNotice(notice);
+    TimerService().init(task: task);
 
     super.initState();
   }

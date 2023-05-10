@@ -30,6 +30,22 @@ class TimerService {
     _notice = () {};
   }
 
+  void init ({required task}) {
+    if(_task == null) {
+      _registerTask(
+        task: task,
+        isTaskChange: false,
+      );
+    }
+
+    if(_task!.taskName != task.taskName) {
+      _registerTask(
+        task: task,
+        isTaskChange: true,
+      );
+    }
+  }
+
   void play({required TaskModel task, void Function()? notice}) {
     if(notice != null) {
       _notice = notice;
@@ -78,6 +94,8 @@ class TimerService {
       _workingTimeSec = _convertMinuteToSec(task.workingTime);
       _breakingTimeSec = _convertMinuteToSec(task.breakingTime);
       _loop = 0;
+
+      reset();
     }
   }
 
