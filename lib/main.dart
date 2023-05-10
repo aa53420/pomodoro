@@ -22,7 +22,7 @@ class App extends StatelessWidget {
         '/timer': (context) => const TimerScreen(),
         '/config': (context) => const ConfigScreen(),
         '/config/register': (context) => const ConfigRegistrationScreen(),
-        '/about': (context) => const AboutScreen(),
+        // '/about': (context) => const AboutScreen(),
       },
       title: 'Pomodoro App',
       theme: ThemeData(

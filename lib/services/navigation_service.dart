@@ -32,13 +32,13 @@ class NavigationService {
       path: "/config",
       widget: const ConfigScreen(),
     ),
-    NavigationItemModel(
-      index: 2,
-      name: "About",
-      icon: Icons.help,
-      path: "/about",
-      widget: const AboutScreen(),
-    ),
+    // NavigationItemModel(
+    //   index: 2,
+    //   name: "About",
+    //   icon: Icons.help,
+    //   path: "/about",
+    //   widget: const AboutScreen(),
+    // ),
   ];
 
   NavigationItemModel _findItemByIndex(int targetIndex) {
